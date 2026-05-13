@@ -64,9 +64,9 @@ input[type=text]:focus { border-color: #2563eb; }
 <body>
 <div id="app"></div>
 
-<script src="https://unpkg.com/qrcode@1.5.3/build/qrcode.min.js"></script>
-<script src="https://unpkg.com/jszip@3.10.1/dist/jszip.min.js"></script>
-<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
 
 <script type="importmap">
 {"imports":{"firebase/app":"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js","firebase/database":"https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js"}}
@@ -404,8 +404,10 @@ function renderDashboard() {
   }
 }
 
-window.addEventListener('hashchange', render);
-render();
+window.addEventListener('load', () => {
+  window.addEventListener('hashchange', render);
+  render();
+});
 </script>
 </body>
 </html>
